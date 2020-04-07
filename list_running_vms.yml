@@ -1,0 +1,11 @@
+---
+- name: list running vms
+  hosts: kvm_hosts
+  tasks: 
+    - name: list running vms
+      virt: 
+        command: list_vms
+        state: running
+      register: running_vms
+
+    - debug: var=running_vms
