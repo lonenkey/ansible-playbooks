@@ -1,0 +1,8 @@
+---
+- name: delete a user with username passed via the cli
+  hosts: all
+  tasks: 
+    - name: delete the user
+      user: 
+        name: "{{ user_name }}"
+        state: absent

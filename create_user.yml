@@ -1,0 +1,8 @@
+---
+- name: Creates a user with username passed as a variable
+  hosts: all
+  tasks: 
+    - name: create the user
+      user: 
+        name: "{{ user_name }}"
+        state: present
