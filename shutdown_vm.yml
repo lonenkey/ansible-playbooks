@@ -1,0 +1,10 @@
+---
+- name: shutdown a VM
+# pass a vm name when running with ansible-playbook shutdown_vm --extra-vars "vm_name= <name of the vm>"
+  hosts: kvm_hosts
+  tasks: 
+    - name: do the job
+      virt: 
+        name: "{{ vm_name }}"
+        state: shutdown
+
