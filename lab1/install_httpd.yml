@@ -1,0 +1,8 @@
+---
+- name: Install httpd on rh-min1
+  hosts: rh-min1
+  tasks: 
+  - name: install httpd
+    yum: 
+      name: httpd
+      state: present
