@@ -1,0 +1,2 @@
+This is to build various ansible playbooks.
+Ultimate goal is to build playbooks that can build / deploy / manage / configure / destroy VMs for a red hat training lab.
