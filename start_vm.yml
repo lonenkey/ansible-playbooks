@@ -1,5 +1,5 @@
 ---
-- name: startup a VM
+- name: startup a VM making a change
 # pass a vm name when running with ansible-playbook start_vm.yml --extra-vars "vm_name=<name of the vm>"
   hosts: kvm_hosts
   tasks: 
