@@ -1,0 +1,12 @@
+---
+
+- name:  Update ubuntu machines
+  hosts:  ubuntu
+  vars_files:
+    lab_sudo_pass.yml
+  vars:
+    ansible_become_pass: "{{ sudo_pass }}"
+  tasks:
+    - name: update cache
+      apt:
+        update_cache: yes

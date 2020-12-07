@@ -1,0 +1,12 @@
+---
+- name: Check to see which hosts are up
+  hosts: all
+  gather_facts: False
+  tasks: 
+    - name: check for ssh 
+      wait_for: 
+        port: 22
+        state: started
+        deloay: 0
+        timeout: 1
+

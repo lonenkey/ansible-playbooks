@@ -1,0 +1,14 @@
+---
+## Run the playbook with the additional option --extra-vars "newhost='<ip>  <hostname>'"
+- name:  Add a new host to /etc/hosts on all the nodes
+  hosts: all
+  vars_files:
+    lab_sudo_pass.yml
+  vars:
+    ansible_become_pass: "{{ sudo_pass }}"
+  tasks:
+    - name:  add a line in file
+      lineinfile:
+        path: /etc/hosts
+        line: "{{ newhost }}"
+        state:  present
