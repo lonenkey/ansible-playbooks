@@ -1,5 +1,12 @@
 ---
-- name: return the ip of hosts
+-
   hosts: all
+  vars_files:
+    lab_sudo_pass.yml
+  vars:
+    ansible_become_pass: "{{ sudo_pass }}"
   tasks: 
-    - debug: var=ansible_all_ipv4_addresses
+    - name: return the ip of hosts
+      debug: 
+        msg: "{{ ansible_default_ipv4.address }}"
+...
