@@ -7,6 +7,6 @@
       wait_for: 
         port: 22
         state: started
-        deloay: 0
+        delay: 0
         timeout: 1
 

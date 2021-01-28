@@ -1,0 +1,13 @@
+---
+- name:  Pushes the daily motd from here to all
+  hosts:  all
+  vars_files:
+    /home/lone/ansible-playbooks/lab_sudo_pass.yml
+  vars:
+    ansible_become_pass: "{{ sudo_pass }}"
+  tasks:
+    - copy:
+        src: /etc/motd
+        dest: /etc/motd
+
+...
