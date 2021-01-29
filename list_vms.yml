@@ -1,6 +1,11 @@
 ---
 - name: list all vms
   hosts: kvm_hosts
+  vars_files:
+    lab_sudo_pass.yml
+  vars:
+    ansible_become_pass: "{{ sudo_pass }}"
+
   tasks:
     - name: list vms using virt 
       virt: 
