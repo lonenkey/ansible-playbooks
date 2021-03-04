@@ -1,0 +1,11 @@
+---
+- name: runsshtest.py via ansible
+  hosts: localhost
+  tasks:
+  - name: do the deed
+    script: sshtest.py
+    args:
+      executable: /usr/bin/python3
+    register: command_output
+  - debug: msg="{{ command_output }}"
+
